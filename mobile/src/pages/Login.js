@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Image,
   TextInput,
-  TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 
 import api from "../services/api";
@@ -18,7 +18,7 @@ const Login = ({ navigation }) => {
   const [user, setUser] = useState("");
 
   useEffect(() => {
-    AsyncStorage.getItem("user").then(user => {
+    AsyncStorage.getItem("user").then((user) => {
       if (user) {
         navigation.navigate("Main", { user });
       }
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#f5f5f5",
     justifyContent: "center",
     alignItems: "center",
-    padding: 30
+    padding: 30,
   },
   input: {
     height: 46,
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     borderColor: "#ddd",
     borderRadius: 4,
     marginTop: 20,
-    paddingHorizontal: 15
+    paddingHorizontal: 15,
   },
   button: {
     height: 46,
@@ -83,13 +83,13 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     marginTop: 10,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   buttonText: {
     color: "#FFF",
     fontWeight: "bold",
-    fontSize: 16
-  }
+    fontSize: 16,
+  },
 });
 
 export default Login;

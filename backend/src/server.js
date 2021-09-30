@@ -10,7 +10,7 @@ const io = require("socket.io")(server);
 
 const connectUsers = {};
 
-io.on("connect", socket => {
+io.on("connect", (socket) => {
   const { user } = socket.handshake.query;
   connectUsers[user] = socket.id;
 });
